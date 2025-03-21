@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Profile</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 85, 85, 0.5);
+            width: 90%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff5555;
+            text-shadow: 0 0 10px #ff5555, 0 0 20px #ff5555;
+            animation: glitch 1s linear infinite;
+        }
+        h1 span {
+            color: #55ff55;
+        }
+        table {
+            background-color: #333;
+            border: 1px solid #55ff55;
+        }
+        th {
+            background-color: #444;
+            color: #ff5555;
+            text-shadow: 0 0 5px #ff5555;
+        }
+        td {
+            color: #e0e0e0;
+            border: 1px solid #55ff55;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff5555;
+            border: none;
+            border-radius: 4px;
+            color: #1a1a1a;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        button:hover {
+            background-color: #ff7777;
+            box-shadow: 0 0 10px #ff5555;
+        }
+        @keyframes glitch {
+            2%, 64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <span th:text="${user.name}"></span></h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Description</th>
+                    <th>Mark</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="enrollment : ${enrollments}">
+                    <td th:text="${enrollment.subject.name}"></td>
+                    <td th:text="${enrollment.subject.description}"></td>
+                    <td th:text="${enrollment.mark}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <form th:action="@{/logout}" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+</body>
+</html>

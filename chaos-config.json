@@ -1,0 +1,8 @@
+{
+    "vulnerabilities": {
+      "sql_injection": true,
+      "rce": true,
+      "xss": true
+    },
+    "chaos_level": "maximum"
+  }

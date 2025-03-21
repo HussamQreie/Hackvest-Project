@@ -1,0 +1,75 @@
+# Project-specific files (removed HELP.md since it’s not present)
+
+# Maven build files
+target/
+*.jar
+*.war
+.mvn/
+mvnw
+mvnw.cmd
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Dependency directories
+dependency-reduced-pom.xml
+
+# Logs
+*.log
+logs/
+
+# Docker volumes
+volumes/
+
+# Database files (if using an embedded database like H2)
+*.db
+*.mv.db
+*.trace.db
+
+# Environment-specific files
+.env
+*.env
+
+# STS (Spring Tool Suite) ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# VS Code ###
+.vscode/
+
+# macOS-specific files
+.DS_Store
+
+# Windows-specific files
+Thumbs.db
+ehthumbs.db
+
+# Editor backup files
+*~
+*.bak
+*.swp
+*.swo
+
+# Miscellaneous
+*.tmp
+*.temp
