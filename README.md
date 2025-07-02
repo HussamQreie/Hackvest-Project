@@ -1,3 +1,5 @@
+```sh
+
 university-hackfest/
 ├── src/
 │   ├── main/
@@ -48,4 +50,6 @@ university-hackfest/
 ├── docker-compose.yml
 ├── pom.xml
 ├── exploit-guide.md
+
+```
 └── chaos-config.json
